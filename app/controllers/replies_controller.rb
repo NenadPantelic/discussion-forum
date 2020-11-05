@@ -5,7 +5,8 @@ class RepliesController < ApplicationController
 
 
   def create
-    @reply = @discussion.replies.create(params[:reply]).permit(:reply, :discussion_id)
+    #@reply = @discussion.replies.create(params[:reply]).permit(:comment, :discussion_id)
+    @reply = @discussion.replies.create(reply_params)
     @reply.user_id = current_user.id
     respond_to do |format|
       if @reply.save
@@ -57,7 +58,7 @@ class RepliesController < ApplicationController
   end
 
   def reply_params
-    params.require(:reply).permit(:reply)
+    params.require(:reply).permit(:comment)
   end
 
 

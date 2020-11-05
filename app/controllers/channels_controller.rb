@@ -27,9 +27,7 @@ class ChannelsController < ApplicationController
   # POST /channels
   # POST /channels.json
   def create
-    puts channel_params
     @channel = Channel.new(channel_params)
-
     respond_to do |format|
       if @channel.save
         format.html { redirect_to channels_path, notice: 'Channel was successfully created.' }
