@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_10_29_133934) do
   enable_extension "plpgsql"
 
   create_table "channels", force: :cascade do |t|
-    t.string "channel"
+    t.string "channel_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
